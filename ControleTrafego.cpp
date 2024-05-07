@@ -10,7 +10,7 @@ ControleTrafego::~ControleTrafego(){
     
 }
 
-//Metodo
+//Metodo Cadastro
 void ControleTrafego::cadastroAstronauta(){
     string cpf;
     string nome;
@@ -35,6 +35,34 @@ void ControleTrafego::imprimirAstronautas(){
         cout << "Cpf: " << lista.getCpf() << endl;
         cout << "Idade: " << lista.getIdade() << endl;
         elemento++;
+    } 
+}
+
+void ControleTrafego::cadastroVoos(){
+    string input;
+    int codigo;
+    cout << "Digite o codigo do Voo: ";
+    getline(cin, input);
+    try
+    {
+        codigo = stoi(input);
+        Voos voo(codigo);
+        voo.statusVoo = EmPlanejamento;
+        voosAll.push_back(voo);
+        system("cls");
     }
-    
+    catch (const exception &e)
+    {
+        system("cls");
+        cout << "Entrada invalida. Por favor, digite apenas numeros." << endl;
+    }
+}
+
+void ControleTrafego::imprimirVoos(){
+    int elemento = 1;
+    for (Voos lista : voosAll){
+        cout << "Voo - " << elemento << endl;
+        cout << "Codigo: " << lista.getCodigo() << endl;
+        elemento++;
+    }
 }

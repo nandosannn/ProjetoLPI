@@ -36,4 +36,27 @@ void Astronauta::setIdade(int idade){
     this->idade=idade;
 }
 
+//Metodos
+bool Astronauta::astronautaMorto(){
+    if (statusAstronauta = morto)
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void Astronauta::imprimirVoosPresentes(){
+    int elemento = 1;
+    for (int elementos : voosParticipados)
+    {
+        cout << "Voos presente: " << endl;
+        cout << "Voo - " << elemento << endl;
+        cout << "Codigo: " << elementos;
+        elemento++;
+    }
+    
+}
+
 

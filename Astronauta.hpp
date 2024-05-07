@@ -3,11 +3,13 @@
 
 #include <list>
 #include <string>
+#include <iostream>
 using namespace std;
 
 enum StcAstronauta{
     disponivel,
-    indisponivel
+    indisponivel,
+    morto
 };
 
 class Astronauta{
@@ -33,6 +35,11 @@ public:
     void setCpf(string cpf);
     void setNome(string nome);
     void setIdade(int idade);
+
+    //Metodos
+    bool astronautaMorto();
+
+    void imprimirVoosPresentes();
 };
 
 

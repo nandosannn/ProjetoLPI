@@ -18,10 +18,14 @@ public:
     //Destrutores
     ~ControleTrafego();
 
-    //Metodos
+    //Metodos Cadastro
     void cadastroAstronauta();
-
     void imprimirAstronautas();
+    void cadastroVoos();
+    void imprimirVoos();
+
+    //Metodos Astronauta
+    void AstronautasMortos();
 
 };
 

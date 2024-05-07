@@ -44,26 +44,28 @@ int main(int argc, char const *argv[])
             do {
                 menuCadastramento();
                 getline(cin, input);
+                
 
                 //Validade da Entrada
                 try {
                     opcao = stoi(input);
+                    system("cls");
                 } catch(const exception& e) {
+                    system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
                 }
                 
-
                 //Menu Cadastramento
                 switch (opcao)
                 {
                 case 1:
-                    //------------------------------ ESTOU TRABALHANDO AQUI ------------------------------------
                     controle.cadastroAstronauta();
                     getline(cin, input);
+                    system("cls");
                     break;
                 case 2:
-                    cout << "Cadastramento opcao 2" << endl;
+                    controle.cadastroVoos();
                     break;
                 case 3:
                     break;
@@ -76,37 +78,48 @@ int main(int argc, char const *argv[])
             break;
         case 2:
             do {
-                menuAstronauta();
-                getline(cin, input);
-                
-                //Validade da Entrada
-                try {
-                    opcao = stoi(input);
-                    system("cls");
-
-                } catch(const exception& e) {
-                    system("cls");
-                    cout << "Entrada invalida. Por favor, digite um numero." << endl;
-                    continue;
-                }
-                
-                //Menu Astronauta
-                switch (opcao)
+                if (controle.astronautaAll.empty())
                 {
-                case 1:
-                    cout << "Menu Astronauta opcao 1" << endl;
+                    cout << "Nenhum Astronauta cadastrado ainda!" << endl;
                     break;
-                case 2:
-                    cout << "Menu Astronauta opcao 2" << endl;
-                    break;
-                case 3:
-                    cout << "Menu Astronauta opcao 3" << endl;
-                    break;
-                case 4:
-                    break;
-                default:
-                    cout << "Opcao invalida" << endl;
-                    break;
+                }
+                else
+                {
+                    menuAstronauta();
+                    getline(cin, input);
+
+                    // Validade da Entrada
+                    try
+                    {
+                        opcao = stoi(input);
+                        system("cls");
+                    }
+                    catch (const exception &e)
+                    {
+                        system("cls");
+                        cout << "Entrada invalida. Por favor, digite um numero." << endl;
+                        continue;
+                    }
+
+                    // Menu Astronauta
+                    switch (opcao)
+                    {
+                    case 1:
+                        //------------------------------ ESTOU TRABALHANDO AQUI ------------------------------------
+                        controle.AstronautasMortos();
+                        break;
+                    case 2:
+                        cout << "Menu Astronauta opcao 2" << endl;
+                        break;
+                    case 3:
+                        cout << "Menu Astronauta opcao 3" << endl;
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        cout << "Opcao invalida" << endl;
+                        break;
+                    }
                 }
             } while (opcao != 4);
             break;
@@ -149,8 +162,8 @@ int main(int argc, char const *argv[])
             break;
         case 4:
             do {
-                menuControleTrafego();
                 
+                menuControleTrafego();
                 getline(cin, input);
 
                 //Validade da Entrada
@@ -193,7 +206,14 @@ int main(int argc, char const *argv[])
         }
     } while (opcao != 5);
 
+    /* Imprimir todos os Astronautas
     cout << "Lista de Astronautas: " << endl;
-    controle.imprimirAstronautas();
+    controle.imprimirAstronautas(); */
+
+    /*Imprimir todos os voos
+    cout << "Lista de Voos: " << endl;
+    controle.imprimirVoos(); */
+
+
     return 0;
 }
