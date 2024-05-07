@@ -1,7 +1,12 @@
 #include <iostream>
-using namespace std;
 #include <string>
+
 #include "Menu.hpp"
+#include "ControleTrafego.hpp"
+#include "Astronauta.hpp"
+#include "Voos.hpp"
+
+using namespace std;
 
 int main(int argc, char const *argv[])
 {
@@ -10,8 +15,13 @@ int main(int argc, char const *argv[])
     cout << "Menu Principal: " << endl;
     cout << "Escolha uma opcao abaixo para comecar:" << endl;
 
+    
     string input;
     int opcao;
+
+    //Declarações para ControleTrafego
+    ControleTrafego controle;
+
 
     do {
         menuPrincipal();
@@ -20,19 +30,19 @@ int main(int argc, char const *argv[])
         //Validade da Entrada
         try {
             opcao = stoi(input);
+            system("cls");
         } catch(const exception& e) {
-            opcao = 0;
+            system("cls");
             cout << "Entrada invalida. Por favor, digite um numero." << endl;
             continue;
         }
-        
+
         //Menu Principal
         switch (opcao)
         {
         case 1:
             do {
                 menuCadastramento();
-                
                 getline(cin, input);
 
                 //Validade da Entrada
@@ -43,11 +53,14 @@ int main(int argc, char const *argv[])
                     continue;
                 }
                 
+
                 //Menu Cadastramento
                 switch (opcao)
                 {
                 case 1:
-                    cout << "Cadastramento opcao 1" << endl;
+                    //------------------------------ ESTOU TRABALHANDO AQUI ------------------------------------
+                    controle.cadastroAstronauta();
+                    getline(cin, input);
                     break;
                 case 2:
                     cout << "Cadastramento opcao 2" << endl;
@@ -58,7 +71,6 @@ int main(int argc, char const *argv[])
                     cout << "Opcao invalida" << endl;
                     break;
                 }
-                system("cls");
             } while (opcao != 3);
             
             break;
@@ -70,11 +82,14 @@ int main(int argc, char const *argv[])
                 //Validade da Entrada
                 try {
                     opcao = stoi(input);
+                    system("cls");
+
                 } catch(const exception& e) {
+                    system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
                 }
-
+                
                 //Menu Astronauta
                 switch (opcao)
                 {
@@ -93,7 +108,6 @@ int main(int argc, char const *argv[])
                     cout << "Opcao invalida" << endl;
                     break;
                 }
-                system("cls");
             } while (opcao != 4);
             break;
         case 3:
@@ -104,10 +118,13 @@ int main(int argc, char const *argv[])
                 //Validade da Entrada
                 try {
                     opcao = stoi(input);
+                    system("cls");
                 } catch(const exception& e) {
+                    system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
                 }
+                
 
                 //Menu Voos
                 switch (opcao)
@@ -127,7 +144,6 @@ int main(int argc, char const *argv[])
                     cout << "Opcao invalida" << endl;
                     break;
                 }
-                system("cls");
             } while (opcao != 4);
             
             break;
@@ -140,11 +156,12 @@ int main(int argc, char const *argv[])
                 //Validade da Entrada
                 try {
                     opcao = stoi(input);
+                    system("cls");
                 } catch(const exception& e) {
+                    system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
                 }
-
 
                 //Menu Controle de Trafego
                 switch (opcao){
@@ -163,7 +180,6 @@ int main(int argc, char const *argv[])
                     cout << "Opcao invalida" << endl;
                     break;
                 }
-                system("cls");
             } while (opcao != 4);
             break;
         case 5:
@@ -175,8 +191,9 @@ int main(int argc, char const *argv[])
             cout << "Opcao invalida"<< endl;
             break;
         }
-        system("cls");
     } while (opcao != 5);
 
+    cout << "Lista de Astronautas: " << endl;
+    controle.imprimirAstronautas();
     return 0;
 }

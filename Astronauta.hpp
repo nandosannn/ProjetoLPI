@@ -3,7 +3,6 @@
 
 #include <list>
 #include <string>
-#include "Voos.hpp"
 using namespace std;
 
 enum StcAstronauta{
@@ -17,7 +16,7 @@ private:
     string nome;
     int idade;
 public:
-    list<Voos> voosParticipados;
+    list<int> voosParticipados;
     int statusAstronauta;
 
     //Construtores
@@ -31,6 +30,8 @@ public:
     string getCpf();
     string getNome();
     int getIdade();
+    void setCpf(string cpf);
+    void setNome(string nome);
     void setIdade(int idade);
 };
 

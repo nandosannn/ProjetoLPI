@@ -26,6 +26,12 @@ string Astronauta::getNome(){
 int Astronauta::getIdade(){
     return idade;
 }
+void Astronauta::setCpf(string cpf){
+    this->cpf=cpf;
+}
+void Astronauta::setNome(string nome){
+    this->nome=cpf;
+}
 void Astronauta::setIdade(int idade){
     this->idade=idade;
 }

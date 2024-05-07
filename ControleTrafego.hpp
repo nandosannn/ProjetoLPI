@@ -4,6 +4,7 @@
 #include "Astronauta.hpp"
 #include "Voos.hpp"
 #include <list>
+#include <iostream>
 using namespace std;
 
 class ControleTrafego{
@@ -16,6 +17,12 @@ public:
 
     //Destrutores
     ~ControleTrafego();
+
+    //Metodos
+    void cadastroAstronauta();
+
+    void imprimirAstronautas();
+
 };
 
 //Implementar os Metodos
