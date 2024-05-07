@@ -37,15 +37,6 @@ void Astronauta::setIdade(int idade){
 }
 
 //Metodos
-bool Astronauta::astronautaMorto(){
-    if (statusAstronauta = morto)
-    {
-        return true;
-    }
-    else{
-        return false;
-    }
-}
 
 void Astronauta::imprimirVoosPresentes(){
     int elemento = 1;
@@ -57,6 +48,10 @@ void Astronauta::imprimirVoosPresentes(){
         elemento++;
     }
     
+}
+
+bool Astronauta::verificarListaVoos(){
+    return voosParticipados.empty();
 }
 
 

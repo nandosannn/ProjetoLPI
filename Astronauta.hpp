@@ -37,8 +37,8 @@ public:
     void setIdade(int idade);
 
     //Metodos
-    bool astronautaMorto();
 
+    bool verificarListaVoos();
     void imprimirVoosPresentes();
 };
 

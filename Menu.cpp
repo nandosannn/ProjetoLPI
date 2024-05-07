@@ -23,6 +23,13 @@ void menuAstronauta(){
     cout << "4. Voltar ao menu Principal" << endl;
 }
 
+void menuMortos(){
+    cout << "1. Lista de Mortos por cpf" << endl;
+    cout << "2. Lista de Mortos por nome" << endl;
+    cout << "3. Lista de voos que participou" << endl;
+    cout << "4. Voltar ao menu Principal" << endl;
+}
+
 void menuVoos(){
     cout << "1. Adicionar Astronauta" << endl;
     cout << "2. Remover Astronauta" << endl;

@@ -25,7 +25,12 @@ public:
     void imprimirVoos();
 
     //Metodos Astronauta
-    void AstronautasMortos();
+    void AstronautasMortosCpf();
+    void AstronautasMortosNome();
+    void AstronautasMortosVoos();
+    void AstronautasDisponiveis();
+    void AstronautasIndisponiveis();
+
 
 };
 

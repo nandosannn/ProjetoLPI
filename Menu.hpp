@@ -7,6 +7,8 @@ void menuCadastramento();
 
 void menuAstronauta();
 
+void menuMortos();
+
 void menuVoos();
 
 void menuControleTrafego();

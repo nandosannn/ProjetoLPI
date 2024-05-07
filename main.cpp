@@ -105,14 +105,52 @@ int main(int argc, char const *argv[])
                     switch (opcao)
                     {
                     case 1:
-                        //------------------------------ ESTOU TRABALHANDO AQUI ------------------------------------
-                        controle.AstronautasMortos();
+                        do
+                        {
+                            //Menu Mortos
+                            menuMortos();
+                            getline(cin, input);
+
+                            // Validade da Entrada
+                            try
+                            {
+                                opcao = stoi(input);
+                                system("cls");
+                            }
+                            catch (const exception &e)
+                            {
+                                system("cls");
+                                cout << "Entrada invalida. Por favor, digite um numero." << endl;
+                                continue;
+                            }
+
+                            //Menu Lista de Mortos
+                            switch (opcao)
+                            {
+                            case 1:
+                                controle.AstronautasMortosCpf();
+                                break;
+                            case 2:
+                                controle.AstronautasMortosNome();
+                                break;
+                            case 3:
+                                controle.AstronautasMortosVoos();
+                                break;
+                            case 4:
+                                break;
+                            default:
+                                cout << "Opcao invalida" << endl;
+                                break;
+                            }
+
+                        } while (opcao != 4);
+
                         break;
                     case 2:
-                        cout << "Menu Astronauta opcao 2" << endl;
+                        controle.AstronautasDisponiveis();
                         break;
                     case 3:
-                        cout << "Menu Astronauta opcao 3" << endl;
+                        controle.AstronautasIndisponiveis();
                         break;
                     case 4:
                         break;
@@ -138,7 +176,6 @@ int main(int argc, char const *argv[])
                     continue;
                 }
                 
-
                 //Menu Voos
                 switch (opcao)
                 {
