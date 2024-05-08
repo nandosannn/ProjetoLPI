@@ -11,6 +11,10 @@ void menuMortos();
 
 void menuVoos();
 
+void menuListaVoos();
+
+void menuListaFinalizados();
+
 void menuControleTrafego();
 
 #endif

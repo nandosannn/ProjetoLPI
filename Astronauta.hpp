@@ -41,6 +41,7 @@ public:
     //Metodo Lista Mortos
     bool verificarListaVoos();
     void imprimirVoosPresentes();
+    void removerVoosParticipados(int codigo);
 };
 
 

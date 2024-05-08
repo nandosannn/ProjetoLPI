@@ -33,9 +33,22 @@ void menuMortos(){
 void menuVoos(){
     cout << "1. Adicionar Astronauta" << endl;
     cout << "2. Remover Astronauta" << endl;
-    cout << "3. Remover Astronauta" << endl;
+    cout << "3. Concluir Planejamento de Voo" << endl;
     cout << "4. Lista de Voos" << endl;
     cout << "5. Voltar ao menu Principal" << endl;
+}
+
+void menuListaVoos(){
+    cout << "1. Lista de Voos Planejados" << endl;
+    cout << "2. Lista de Voos em Curso" << endl;
+    cout << "3. Lista de Voos Finalizados" << endl;
+    cout << "4. Voltar ao menu Principal" << endl;
+}
+
+void menuListaFinalizados(){
+    cout << "1. Finalizados com Sucesso" << endl;
+    cout << "2. Finalizados sem Sucesso" << endl;
+    cout << "3. Voltar ao menu Principal" << endl;
 }
 
 void menuControleTrafego(){

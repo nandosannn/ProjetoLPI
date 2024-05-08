@@ -34,6 +34,12 @@ public:
 
     //Metodos Voos
     void AddAstronautaVoo();
+    void RemoAstronautaVoo();
+    void PlanejamentoConcluido();
+    void ListaPlanejado();
+    void ListaEmCurso();
+    void ListaFimSucesso();
+    void ListaFimSemSucesso();
 };
 
 //Implementar os Metodos

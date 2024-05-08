@@ -53,4 +53,12 @@ bool Astronauta::verificarListaVoos(){
     return voosParticipados.empty();
 }
 
+void Astronauta::removerVoosParticipados(int codigo){
+    for (auto it = voosParticipados.begin(); it != voosParticipados.end(); it++){
+        if (*it == codigo) {
+            voosParticipados.erase(it);
+        }
+    } 
+}
+
 

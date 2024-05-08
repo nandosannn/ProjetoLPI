@@ -3,6 +3,8 @@
 
 #include <list>
 #include "Astronauta.hpp"
+#include <iterator>
+#include <string>
 using namespace std;
 
 enum SituacaoVoo{
@@ -35,6 +37,7 @@ public:
     void imprimirAstronautasPresentes();
 
     void AdicionarAstronauta(Astronauta astronauta);
+    void RemoverAstronauta(Astronauta astronauta);
 };
 
 #endif
