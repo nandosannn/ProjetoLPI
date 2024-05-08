@@ -33,8 +33,9 @@ void menuMortos(){
 void menuVoos(){
     cout << "1. Adicionar Astronauta" << endl;
     cout << "2. Remover Astronauta" << endl;
-    cout << "3. Lista de Voos" << endl;
-    cout << "4. Voltar ao menu Principal" << endl;
+    cout << "3. Remover Astronauta" << endl;
+    cout << "4. Lista de Voos" << endl;
+    cout << "5. Voltar ao menu Principal" << endl;
 }
 
 void menuControleTrafego(){

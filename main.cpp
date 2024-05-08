@@ -180,15 +180,19 @@ int main(int argc, char const *argv[])
                 switch (opcao)
                 {
                 case 1:
-                    cout << "Menu Voos opcao 1" << endl;
+                    //--------------------------------------------------------- ESTOU TRABALHANDO AQUI ---------------------------------------------------------------
+                    controle.AddAstronautaVoo();
                     break;
                 case 2:
-                    cout << "Menu Voos opcao 2" << endl;
+                    cout << "Remover Astronauta" << endl;
                     break;
                 case 3:
-                    cout << "Menu Voos opcao 3" << endl;
+                    cout << "Finalizar Voo" << endl;
                     break;
-                 case 4:
+                case 4:
+                    cout << "Lista de Voos" << endl;
+                    break;
+                case 5:
                     break;
                 default:
                     cout << "Opcao invalida" << endl;
@@ -234,7 +238,7 @@ int main(int argc, char const *argv[])
             break;
         case 5:
             //Finalizar a Sessao
-            cout << "Obrigado por usar os servicos do Centro de Controle Espacial!" << endl;
+            cout << "Obrigado por usar os nossos servicos, mohh!" << endl;
             break;
         default:
             //Opcao Invalida

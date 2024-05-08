@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -std=c++11 -Wall
-SRCS = main.cpp Menu.cpp Astronauta.cpp Voos.cpp ControleTrafego.cpp ControleAstronauta.cpp
+SRCS = main.cpp Menu.cpp Astronauta.cpp Voos.cpp ControleTrafego.cpp ControleAstronauta.cpp ControleCadastro.cpp ControleVoos.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXEC = myprogram
 

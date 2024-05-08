@@ -30,6 +30,11 @@ public:
 
     //Encapsuladores
     int getCodigo();
+
+    //Metodos
+    void imprimirAstronautasPresentes();
+
+    void AdicionarAstronauta(Astronauta astronauta);
 };
 
 #endif

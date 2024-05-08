@@ -38,6 +38,7 @@ public:
 
     //Metodos
 
+    //Metodo Lista Mortos
     bool verificarListaVoos();
     void imprimirVoosPresentes();
 };

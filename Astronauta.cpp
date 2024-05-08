@@ -47,7 +47,6 @@ void Astronauta::imprimirVoosPresentes(){
         cout << "Codigo: " << elementos;
         elemento++;
     }
-    
 }
 
 bool Astronauta::verificarListaVoos(){

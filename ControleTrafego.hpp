@@ -5,6 +5,7 @@
 #include "Voos.hpp"
 #include <list>
 #include <iostream>
+#include <string>
 using namespace std;
 
 class ControleTrafego{
@@ -31,7 +32,8 @@ public:
     void AstronautasDisponiveis();
     void AstronautasIndisponiveis();
 
-
+    //Metodos Voos
+    void AddAstronautaVoo();
 };
 
 //Implementar os Metodos

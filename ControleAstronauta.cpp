@@ -1,5 +1,6 @@
 #include "ControleTrafego.hpp"
 
+//Metodos Lista Mortos
 void ControleTrafego::AstronautasMortosCpf(){
     int elementos = 1;
 
@@ -72,7 +73,7 @@ void ControleTrafego::AstronautasMortosVoos(){
 }
 
 
-
+//Metodos Lista Disponiveis
 void ControleTrafego::AstronautasDisponiveis(){
     int elemento=1;
     for (Astronauta elementos : astronautaAll)
@@ -92,6 +93,8 @@ void ControleTrafego::AstronautasDisponiveis(){
     
 }
 
+
+//Metodos Lista Disponiveis
 void ControleTrafego::AstronautasIndisponiveis(){
     int elemento=1;
     for (Astronauta elementos : astronautaAll)
