@@ -40,6 +40,14 @@ public:
     void ListaEmCurso();
     void ListaFimSucesso();
     void ListaFimSemSucesso();
+
+    //Metodos Controle Geral
+    void LancarVoo();
+    void ExplodirVoo();
+    void FinalizarVoo();
+
+
+
 };
 
 //Implementar os Metodos

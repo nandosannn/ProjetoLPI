@@ -7,5 +7,6 @@ ControleTrafego::ControleTrafego(){
 
 //Destrutores
 ControleTrafego::~ControleTrafego(){
-    
+   astronautaAll.clear(); 
+   voosAll.clear();
 }

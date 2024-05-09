@@ -10,7 +10,7 @@ Voos::Voos(int codigo){
 
 //Destrutores
 Voos::~Voos(){
-
+    AstronautasPresentes.clear();
  }
 
 int Voos::getCodigo(){

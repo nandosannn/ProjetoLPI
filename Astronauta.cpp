@@ -14,6 +14,7 @@ Astronauta::Astronauta(){
 
 //Destrutor
 Astronauta::~Astronauta(){
+    voosParticipados.clear();
 }
 
  //Encapsuladores

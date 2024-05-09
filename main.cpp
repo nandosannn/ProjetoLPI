@@ -272,6 +272,7 @@ int main(int argc, char const *argv[])
                 } while (opcao != 4);
             }
             break;
+        
         //Menu Controle de Trafego
         case 4:
             do {
@@ -290,13 +291,13 @@ int main(int argc, char const *argv[])
 
                 switch (opcao){
                 case 1:
-                    cout << "Menu Controle de Trafego opcao 1" << endl;
+                    controle.LancarVoo();
                     break;
                 case 2:
-                    cout << "Menu Controle de Trafego opcao 2" << endl;
+                    controle.ExplodirVoo();
                     break;
                 case 3:
-                    cout << "Menu Controle de Trafego opcao 2" << endl;
+                    controle.FinalizarVoo();
                     break;
                 case 4:
                     break;
