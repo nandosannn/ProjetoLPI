@@ -6,6 +6,7 @@
 #include <list>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 using namespace std;
 
 class ControleTrafego{
@@ -22,8 +23,10 @@ public:
     //Metodos Cadastro
     void cadastroAstronauta();
     void imprimirAstronautas();
+    bool testeAstronauta(string input);
     void cadastroVoos();
     void imprimirVoos();
+    bool testeVoos(int input);
 
     //Metodos Astronauta
     void AstronautasMortosCpf();
@@ -33,9 +36,9 @@ public:
     void AstronautasIndisponiveis();
 
     //Metodos Voos
-    void AddAstronautaVoo();
-    void RemoAstronautaVoo();
-    void PlanejamentoConcluido();
+    void AddAstronautaVoo(list<Astronauta>& astronautaAll, list<Voos>& voosAll);
+    void RemoAstronautaVoo(list<Astronauta>& astronautaAll, list<Voos>& voosAll);
+    void PlanejamentoConcluido(list<Voos>& voosAll);
     void ListaPlanejado();
     void ListaEmCurso();
     void ListaFimSucesso();

@@ -2,6 +2,7 @@
 
 //Metodos Lista Mortos
 void ControleTrafego::AstronautasMortosCpf(){
+    system("cls");
     int elementos = 1;
 
     for (Astronauta astronautas : astronautaAll)
@@ -19,11 +20,13 @@ void ControleTrafego::AstronautasMortosCpf(){
 
     if (elementos == 1)
     {
+        system("cls");
         cout << "Nenhum astronauta morto #DeusNoControle" << endl;
     }
 }
 
 void ControleTrafego::AstronautasMortosNome(){
+    system("cls");
     int elementos = 1;
 
     for (Astronauta astronautas : astronautaAll)
@@ -41,11 +44,13 @@ void ControleTrafego::AstronautasMortosNome(){
 
     if (elementos == 1)
     {
+        system("cls");
         cout << "Nenhum astronauta morto #DeusNoControle" << endl;
     }
 }
 
 void ControleTrafego::AstronautasMortosVoos(){
+    system("cls");
     int elementos = 1;
     
     for (Astronauta astronautas : astronautaAll)
@@ -68,6 +73,7 @@ void ControleTrafego::AstronautasMortosVoos(){
 
     if (elementos == 1)
     {
+        system("cls");
         cout << "Nenhum astronauta morto #DeusNoControle" << endl;
     }
 }
@@ -75,6 +81,7 @@ void ControleTrafego::AstronautasMortosVoos(){
 
 //Metodos Lista Disponiveis
 void ControleTrafego::AstronautasDisponiveis(){
+    system("cls");
     int elemento=1;
     for (Astronauta elementos : astronautaAll)
     {
@@ -87,6 +94,7 @@ void ControleTrafego::AstronautasDisponiveis(){
 
     if (elemento==1)
     {
+        system("cls");
         cout << "Nenhum astronauta disponível #QueTristreza" << endl;
     }
     
@@ -96,6 +104,7 @@ void ControleTrafego::AstronautasDisponiveis(){
 
 //Metodos Lista Disponiveis
 void ControleTrafego::AstronautasIndisponiveis(){
+    system("cls");
     int elemento=1;
     for (Astronauta elementos : astronautaAll)
     {
@@ -108,7 +117,8 @@ void ControleTrafego::AstronautasIndisponiveis(){
 
     if (elemento==1)
     {
-        cout << "Todos astronautas disponíveis #QueAlegria" << endl;
+        system("cls");
+        cout << "Todos astronautas estao disponiveis #QueAlegria" << endl;
     }
 }
 

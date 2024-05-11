@@ -54,12 +54,16 @@ bool Astronauta::verificarListaVoos(){
     return voosParticipados.empty();
 }
 
-void Astronauta::removerVoosParticipados(int codigo){
-    for (auto it = voosParticipados.begin(); it != voosParticipados.end(); it++){
-        if (*it == codigo) {
-            voosParticipados.erase(it);
+void Astronauta::removerVoosParticipados(int codigo, list<int>& voosParticipados){
+    cout << "Chegou aqui" << endl;
+    for (auto it = voosParticipados.begin(); it != voosParticipados.end(); ++it)
+    {
+        if (codigo == *it)
+        {
+            it = voosParticipados.erase(it);
+            break;
         }
-    } 
+    }
 }
 
 

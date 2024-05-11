@@ -10,26 +10,26 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    system("cls");
     cout << "Bem-vindo ao Centro de Controle Espacial!" << endl;
     cout << endl;
-    cout << "Menu Principal: " << endl;
+    cout << "Menu Principal" << endl;
     cout << "Escolha uma opcao abaixo para comecar:" << endl;
-
     
-    string input;
-    int opcao;
+    string inputPrincipal, inputSecundario, inputTerciario, inputQuartenario;
+    int opcaoPrincipal, opcaoSecundaria, opcaoTerciaria, opcaoQuartenaria;
 
     //Declarações para ControleTrafego
     ControleTrafego controle;
 
-
+    //Menu Cadastramento
     do {
         menuPrincipal();
-        getline(cin, input);
+        getline(cin, inputPrincipal);
 
         //Validade da Entrada
         try {
-            opcao = stoi(input);
+            opcaoPrincipal = stoi(inputPrincipal);
             system("cls");
         } catch(const exception& e) {
             system("cls");
@@ -39,18 +39,18 @@ int main(int argc, char const *argv[])
 
         //Menu Principal
        
-        switch (opcao){
+        switch (opcaoPrincipal){
         
-        //Menu Cadastramento
+        
         case 1:
             do {
                 menuCadastramento();
-                getline(cin, input);
+                getline(cin, inputSecundario);
                 
 
                 //Validade da Entrada
                 try {
-                    opcao = stoi(input);
+                    opcaoSecundaria = stoi(inputSecundario);
                     system("cls");
                 } catch(const exception& e) {
                     system("cls");
@@ -58,12 +58,10 @@ int main(int argc, char const *argv[])
                     continue;
                 }
                 
-                switch (opcao)
+                switch (opcaoSecundaria)
                 {
                 case 1:
                     controle.cadastroAstronauta();
-                    getline(cin, input);
-                    system("cls");
                     break;
                 case 2:
                     controle.cadastroVoos();
@@ -74,7 +72,7 @@ int main(int argc, char const *argv[])
                     cout << "Opcao invalida" << endl;
                     break;
                 }
-            } while (opcao != 3);
+            } while (opcaoSecundaria != 3);
             
             break;
         // Menu Astronauta
@@ -85,14 +83,13 @@ int main(int argc, char const *argv[])
                     cout << "Nenhum Astronauta cadastrado ainda!" << endl;
                     break;
                 }
-                else
-                {
+                else{
                     menuAstronauta();
-                    getline(cin, input);
+                    getline(cin, inputSecundario);
 
                     // Validade da Entrada
                     try{
-                        opcao = stoi(input);
+                        opcaoSecundaria = stoi(inputSecundario);
                         system("cls");
                     }
                     catch (const exception &e)
@@ -102,19 +99,19 @@ int main(int argc, char const *argv[])
                         continue;
                     }
                 
-                    switch (opcao)
+                    switch (opcaoSecundaria)
                     {
                     case 1:
                         do
                         {
                             //Menu Mortos
                             menuMortos();
-                            getline(cin, input);
+                            getline(cin, inputTerciario);
 
                             // Validade da Entrada
                             try
                             {
-                                opcao = stoi(input);
+                                opcaoTerciaria = stoi(inputTerciario);
                                 system("cls");
                             }
                             catch (const exception &e)
@@ -125,7 +122,7 @@ int main(int argc, char const *argv[])
                             }
 
                             //Menu Lista de Mortos
-                            switch (opcao)
+                            switch (opcaoTerciaria)
                             {
                             case 1:
                                 controle.AstronautasMortosCpf();
@@ -143,8 +140,7 @@ int main(int argc, char const *argv[])
                                 break;
                             }
 
-                        } while (opcao != 4);
-
+                        } while (opcaoTerciaria != 4);
                         break;
                     case 2:
                         controle.AstronautasDisponiveis();
@@ -159,24 +155,26 @@ int main(int argc, char const *argv[])
                         break;
                     }
                 }
-            } while (opcao != 4);
+            } while (opcaoSecundaria != 4);
             break;
         // Menu Voos
         case 3:
-            
-            if (controle.voosAll.empty()){
-                cout << "Nenhum Voo cadastrado ainda!" << endl;
-                break;
-            }
-            else{
-                do {
+            do
+            {
+                if (controle.voosAll.empty())
+                {
+                    cout << "Nenhum Voo cadastrado ainda!" << endl;
+                    break;
+                }
+                else
+                {
                     menuVoos();
-                    getline(cin, input);
+                    getline(cin, inputSecundario);
 
                     // Validade da Entrada
                     try
                     {
-                        opcao = stoi(input);
+                        opcaoSecundaria = stoi(inputSecundario);
                         system("cls");
                     }
                     catch (const exception &e)
@@ -185,34 +183,47 @@ int main(int argc, char const *argv[])
                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                         continue;
                     }
-
-                    switch (opcao)
+                    
+                    switch (opcaoSecundaria)
                     {
                     case 1:
-                        controle.AddAstronautaVoo();
+                        cout << "Astronautas presentes no voo: " << endl;
+                        for (Voos voos : controle.voosAll)
+                        {
+                            for (Astronauta astronauta : voos.AstronautasPresentes)
+                            {
+                                cout << "Astronauta : " << astronauta.getNome() << endl;
+                            }
+                            
+                        }
+                        controle.AddAstronautaVoo(controle.astronautaAll, controle.voosAll);
                         break;
                     case 2:
-                        controle.RemoAstronautaVoo();
+                        controle.RemoAstronautaVoo(controle.astronautaAll, controle.voosAll);
                         break;
                     case 3:
-                        controle.PlanejamentoConcluido();
+                        controle.PlanejamentoConcluido(controle.voosAll);
                         break;
+                    //Menu Listas Voos
                     case 4:
                         do
                         {
                             menuListaVoos();
-                            getline(cin, input);
+                            getline(cin, inputTerciario);
 
-                            //Validade da entrada
-                            try{
-                                opcao = stoi(input);
+                            // Validade da entrada
+                            try
+                            {
+                                opcaoTerciaria = stoi(inputTerciario);
+                                system("cls");
                             }
                             catch (const std::exception &e)
                             {
+                                system("cls");
                                 cout << "Entrada invalida. Por favor, digite um numero." << endl;
                             }
 
-                            switch (opcao)
+                            switch (opcaoTerciaria)
                             {
                             case 1:
                                 controle.ListaPlanejado();
@@ -220,15 +231,16 @@ int main(int argc, char const *argv[])
                             case 2:
                                 controle.ListaEmCurso();
                                 break;
+                            // Lista Finalizados
                             case 3:
                                 do
                                 {
                                     menuListaFinalizados();
-                                    getline(cin, input);
+                                    getline(cin, inputQuartenario);
 
                                     try
                                     {
-                                        opcao = stoi(input);
+                                        opcaoQuartenaria = stoi(inputQuartenario);
                                         system("cls");
                                     }
                                     catch (const std::exception &e)
@@ -238,7 +250,7 @@ int main(int argc, char const *argv[])
                                         continue;
                                     }
 
-                                    switch (opcao)
+                                    switch (opcaoQuartenaria)
                                     {
                                     case 1:
                                         controle.ListaFimSucesso();
@@ -252,36 +264,35 @@ int main(int argc, char const *argv[])
                                         cout << "Opcao invalida" << endl;
                                         break;
                                     }
-                                } while (opcao != 3);
+                                } while (opcaoQuartenaria != 3);
                                 break;
-
+                            case 4:
+                                break;
                             default:
+                                cout << "Opcao invalida" << endl;
                                 break;
                             }
 
-                        } while (opcao != 4);
-
-                        cout << "Lista de Voos" << endl;
-                        break;
+                        } while (opcaoTerciaria != 4);
+                        break; 
                     case 5:
                         break;
                     default:
-                        cout << "Opcao invalida" << endl;
                         break;
                     }
-                } while (opcao != 4);
-            }
+                }
+                
+            } while (opcaoSecundaria != 5);
             break;
-        
         //Menu Controle de Trafego
         case 4:
             do {
                 menuControleTrafego();
-                getline(cin, input);
+                getline(cin, inputSecundario);
 
                 //Validade da Entrada
                 try {
-                    opcao = stoi(input);
+                    opcaoSecundaria = stoi(inputSecundario);
                     system("cls");
                 } catch(const exception& e) {
                     system("cls");
@@ -289,7 +300,8 @@ int main(int argc, char const *argv[])
                     continue;
                 }
 
-                switch (opcao){
+                switch (opcaoSecundaria)
+                {
                 case 1:
                     controle.LancarVoo();
                     break;
@@ -305,7 +317,7 @@ int main(int argc, char const *argv[])
                     cout << "Opcao invalida" << endl;
                     break;
                 }
-            } while (opcao != 4);
+            } while (opcaoSecundaria != 4);
             break;
         case 5:
             //Finalizar a Sessao
@@ -316,16 +328,15 @@ int main(int argc, char const *argv[])
             cout << "Opcao invalida"<< endl;
             break;
         }
-    } while (opcao != 5);
+    } while (opcaoPrincipal != 5);
 
-    /* Imprimir todos os Astronautas
+    //Imprimir todos os Astronautas
     cout << "Lista de Astronautas: " << endl;
-    controle.imprimirAstronautas(); */
-
-    /*Imprimir todos os voos
+    controle.imprimirAstronautas();
+    
+    cout << endl;
+    //Imprimir todos os voos
     cout << "Lista de Voos: " << endl;
-    controle.imprimirVoos(); */
-
-
+    controle.imprimirVoos();
     return 0;
 }

@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 #include <iostream>
+#include <iterator>
 using namespace std;
 
 enum StcAstronauta{
@@ -41,7 +42,7 @@ public:
     //Metodo Lista Mortos
     bool verificarListaVoos();
     void imprimirVoosPresentes();
-    void removerVoosParticipados(int codigo);
+    void removerVoosParticipados(int codigo, list<int>& voosParticipados);
 };
 
 

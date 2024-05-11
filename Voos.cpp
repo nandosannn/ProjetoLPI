@@ -25,18 +25,19 @@ void Voos::imprimirAstronautasPresentes(){
     }
 }
 
-void Voos::AdicionarAstronauta(Astronauta astronauta){
+void Voos::AdicionarAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes){
     AstronautasPresentes.push_back(astronauta);
 }
 
-void Voos::RemoverAstronauta(Astronauta astronauta){
+void Voos::RemoverAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes){
     Astronauta AstronautaAux;
     for (auto it = AstronautasPresentes.begin(); it != AstronautasPresentes.end(); it++)
     {
         AstronautaAux = *it;
-        if (AstronautaAux.getNome() == astronauta.getNome())
+        if (AstronautaAux.getCpf() == astronauta.getCpf())
         {
-            it = AstronautasPresentes.erase(it);
+            AstronautasPresentes.erase(it);
+            break;
         }
         
     }

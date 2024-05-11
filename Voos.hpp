@@ -36,8 +36,8 @@ public:
     //Metodos
     void imprimirAstronautasPresentes();
 
-    void AdicionarAstronauta(Astronauta astronauta);
-    void RemoverAstronauta(Astronauta astronauta);
+    void AdicionarAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes);
+    void RemoverAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes);
 };
 
 #endif
