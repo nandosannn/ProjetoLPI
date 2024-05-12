@@ -36,8 +36,15 @@ public:
     //Metodos
     void imprimirAstronautasPresentes();
 
-    void AdicionarAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes);
-    void RemoverAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes);
+    bool AdicionarAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes);
+    bool RemoverAstronauta(string cpf, list<Astronauta>& AstronautasPresentes);
+
+    
+
+    //Metodo Controle Geral Voos.hpp
+    void statusAstronautaMorto (list<Astronauta>& AstronautasPresentes, list<Astronauta>& astronautaAll);
+    void limparLista(list<Astronauta>& AstronautasPresentes);
+    void statusAstronautoVooFim (list<Astronauta>& AstronautasPresentes, list<Astronauta>& astronautaAll);
 };
 
 #endif

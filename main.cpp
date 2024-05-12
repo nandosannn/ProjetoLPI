@@ -10,6 +10,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    system("clear");
     system("cls");
     cout << "Bem-vindo ao Centro de Controle Espacial!" << endl;
     cout << endl;
@@ -30,8 +31,10 @@ int main(int argc, char const *argv[])
         //Validade da Entrada
         try {
             opcaoPrincipal = stoi(inputPrincipal);
+            system("clear");
             system("cls");
         } catch(const exception& e) {
+            system("clear");
             system("cls");
             cout << "Entrada invalida. Por favor, digite um numero." << endl;
             continue;
@@ -51,8 +54,10 @@ int main(int argc, char const *argv[])
                 //Validade da Entrada
                 try {
                     opcaoSecundaria = stoi(inputSecundario);
+                    system("clear");
                     system("cls");
                 } catch(const exception& e) {
+                    system("clear");
                     system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
@@ -90,10 +95,12 @@ int main(int argc, char const *argv[])
                     // Validade da Entrada
                     try{
                         opcaoSecundaria = stoi(inputSecundario);
+                        system("clear");
                         system("cls");
                     }
                     catch (const exception &e)
                     {
+                        system("clear");
                         system("cls");
                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                         continue;
@@ -112,10 +119,12 @@ int main(int argc, char const *argv[])
                             try
                             {
                                 opcaoTerciaria = stoi(inputTerciario);
+                                system("clear");
                                 system("cls");
                             }
                             catch (const exception &e)
                             {
+                                system("clear");
                                 system("cls");
                                 cout << "Entrada invalida. Por favor, digite um numero." << endl;
                                 continue;
@@ -175,10 +184,12 @@ int main(int argc, char const *argv[])
                     try
                     {
                         opcaoSecundaria = stoi(inputSecundario);
+                        system("clear");
                         system("cls");
                     }
                     catch (const exception &e)
                     {
+                        system("clear");
                         system("cls");
                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                         continue;
@@ -187,6 +198,13 @@ int main(int argc, char const *argv[])
                     switch (opcaoSecundaria)
                     {
                     case 1:
+                        cout << endl;
+                        controle.AddAstronautaVoo(controle.astronautaAll, controle.voosAll);
+                        break;
+                    case 2:
+                        /*
+                        //Impressão teste -----------------------------------------------------------------------------
+                        cout << endl;
                         cout << "Astronautas presentes no voo: " << endl;
                         for (Voos voos : controle.voosAll)
                         {
@@ -196,9 +214,18 @@ int main(int argc, char const *argv[])
                             }
                             
                         }
-                        controle.AddAstronautaVoo(controle.astronautaAll, controle.voosAll);
-                        break;
-                    case 2:
+                        cout << endl;
+                        cout << "Voos que astronauta participou: " << endl;
+                        for (Astronauta astronautas : controle.astronautaAll)
+                        {
+                            for (int voos : astronautas.voosParticipados)
+                            {
+                                cout << "Astronauta: " << astronautas.getNome() << " participou do voo: " << voos << endl;
+                            }
+                            
+                        }
+                        //Impressão teste -----------------------------------------------------------------------------
+                        */
                         controle.RemoAstronautaVoo(controle.astronautaAll, controle.voosAll);
                         break;
                     case 3:
@@ -215,10 +242,12 @@ int main(int argc, char const *argv[])
                             try
                             {
                                 opcaoTerciaria = stoi(inputTerciario);
+                                system("clear");
                                 system("cls");
                             }
                             catch (const std::exception &e)
                             {
+                                system("clear");
                                 system("cls");
                                 cout << "Entrada invalida. Por favor, digite um numero." << endl;
                             }
@@ -241,10 +270,12 @@ int main(int argc, char const *argv[])
                                     try
                                     {
                                         opcaoQuartenaria = stoi(inputQuartenario);
+                                        system("clear");
                                         system("cls");
                                     }
                                     catch (const std::exception &e)
                                     {
+                                        system("clear");
                                         system("cls");
                                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                                         continue;
@@ -293,8 +324,10 @@ int main(int argc, char const *argv[])
                 //Validade da Entrada
                 try {
                     opcaoSecundaria = stoi(inputSecundario);
+                    system("clear");
                     system("cls");
                 } catch(const exception& e) {
+                    system("clear");
                     system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
@@ -306,10 +339,10 @@ int main(int argc, char const *argv[])
                     controle.LancarVoo();
                     break;
                 case 2:
-                    controle.ExplodirVoo();
+                    controle.ExplodirVoo(controle.voosAll, controle.astronautaAll);
                     break;
                 case 3:
-                    controle.FinalizarVoo();
+                    controle.FinalizarVoo(controle.voosAll, controle.astronautaAll);
                     break;
                 case 4:
                     break;
@@ -330,6 +363,7 @@ int main(int argc, char const *argv[])
         }
     } while (opcaoPrincipal != 5);
 
+    /*
     //Imprimir todos os Astronautas
     cout << "Lista de Astronautas: " << endl;
     controle.imprimirAstronautas();
@@ -338,5 +372,6 @@ int main(int argc, char const *argv[])
     //Imprimir todos os voos
     cout << "Lista de Voos: " << endl;
     controle.imprimirVoos();
+    */
     return 0;
 }

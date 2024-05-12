@@ -42,10 +42,9 @@ public:
     //Metodo Lista Mortos
     bool verificarListaVoos();
     void imprimirVoosPresentes();
-    void removerVoosParticipados(int codigo, list<int>& voosParticipados);
+    bool addvoosParticipados(int codigo, list<int>& voosParticipados);
+    bool removerVoosParticipados(int codigo, list<int>& voosParticipados);
 };
 
 
 #endif
-
-//Implementar os Metodos

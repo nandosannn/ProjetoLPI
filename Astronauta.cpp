@@ -43,9 +43,7 @@ void Astronauta::imprimirVoosPresentes(){
     int elemento = 1;
     for (int elementos : voosParticipados)
     {
-        cout << "Voos presente: " << endl;
-        cout << "Voo - " << elemento << endl;
-        cout << "Codigo: " << elementos;
+        cout << "Voo - " << elemento << ": " << elementos << endl;
         elemento++;
     }
 }
@@ -54,16 +52,28 @@ bool Astronauta::verificarListaVoos(){
     return voosParticipados.empty();
 }
 
-void Astronauta::removerVoosParticipados(int codigo, list<int>& voosParticipados){
-    cout << "Chegou aqui" << endl;
+bool Astronauta::removerVoosParticipados(int codigo, list<int>& voosParticipados){
     for (auto it = voosParticipados.begin(); it != voosParticipados.end(); ++it)
     {
         if (codigo == *it)
         {
             it = voosParticipados.erase(it);
-            break;
+            return true;
         }
     }
+    return false;
+}
+
+bool Astronauta::addvoosParticipados(int codigo, list<int>& voosParticipados){
+    for (int voos : voosParticipados)
+    {
+        if(codigo == voos){
+            return false;
+        }
+    }
+    voosParticipados.push_back(codigo);
+    return true;
+    
 }
 
 

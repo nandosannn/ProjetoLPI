@@ -10,6 +10,7 @@ void ControleTrafego::cadastroAstronauta(){
     getline(cin, cpf);
     if (testeAstronauta(cpf))
     {
+        system("clear");
         system("cls");
         cout << "Astronauta ja cadastrado" << endl;
     }
@@ -22,6 +23,7 @@ void ControleTrafego::cadastroAstronauta(){
         astronauta.statusAstronauta = disponivel;
         astronautaAll.push_back(astronauta);
         getline(cin, cpf);
+        system("clear");
         system("cls");
         cout << "Cadastro realizado com sucesso!" << endl;
     }
@@ -71,12 +73,14 @@ void ControleTrafego::cadastroVoos(){
             Voos voo(codigo);
             voo.statusVoo = EmPlanejamento;
             voosAll.push_back(voo);
+            system("clear");
             system("cls");
             cout << "Cadastro realizado com sucesso!" << endl;
         }
     }
     catch (const exception &e)
     {
+        system("clear");
         system("cls");
         cout << "Entrada invalida. Por favor, digite apenas numeros." << endl;
     }

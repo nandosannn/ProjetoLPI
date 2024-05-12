@@ -25,22 +25,63 @@ void Voos::imprimirAstronautasPresentes(){
     }
 }
 
-void Voos::AdicionarAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes){
+bool Voos::AdicionarAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes){
+    for (Astronauta astronautas : AstronautasPresentes)
+    {
+        if (astronautas.getCpf() ==  astronauta.getCpf())
+        {
+            return false;
+        }
+    }
     AstronautasPresentes.push_back(astronauta);
+    return true;
 }
 
-void Voos::RemoverAstronauta(Astronauta& astronauta, list<Astronauta>& AstronautasPresentes){
-    Astronauta AstronautaAux;
-    for (auto it = AstronautasPresentes.begin(); it != AstronautasPresentes.end(); it++)
+bool Voos::RemoverAstronauta(string cpf, list<Astronauta>& AstronautasPresentes){
+    Astronauta astronautaAux;
+    for (auto it = AstronautasPresentes.begin(); it != AstronautasPresentes.end(); ++it)
     {
-        AstronautaAux = *it;
-        if (AstronautaAux.getCpf() == astronauta.getCpf())
+        astronautaAux = *it;
+        if (cpf == astronautaAux.getCpf())
         {
             AstronautasPresentes.erase(it);
-            break;
+            return true;
         }
-        
     }
+    return false;
     
 }
 
+ //Metodo Controle Geral Voos.cpp
+void Voos::statusAstronautaMorto(list<Astronauta>& AstronautasPresentes, list<Astronauta>& astronautaAll){
+    for (auto& astronautas : AstronautasPresentes) {
+        for (auto& astronautasGeral : astronautaAll)
+        {
+            if (astronautas.getCpf() == astronautasGeral.getCpf())
+            {
+                astronautasGeral.statusAstronauta=morto;
+            }
+            
+        }
+        
+    }
+}
+
+void Voos::limparLista(list<Astronauta>& AstronautasPresentes){
+        AstronautasPresentes.clear();
+    }
+
+//Função classe Voos.cpp
+void Voos::statusAstronautoVooFim(list<Astronauta>& AstronautasPresentes, list<Astronauta>& astronautaAll) {
+    for (auto& astronautas : AstronautasPresentes) {
+        for (auto& astronautasGeral : astronautaAll)
+        {
+            if (astronautas.getCpf() == astronautasGeral.getCpf())
+            {
+                astronautasGeral.statusAstronauta=disponivel;
+            }
+            
+        }
+        
+    }
+}

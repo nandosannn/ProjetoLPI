@@ -46,8 +46,8 @@ public:
 
     //Metodos Controle Geral
     void LancarVoo();
-    void ExplodirVoo();
-    void FinalizarVoo();
+    void ExplodirVoo(list<Voos>& voosAll, list<Astronauta>& astronautaAll);
+    void FinalizarVoo(list<Voos>& voosAll, list<Astronauta>& astronautaAll);
 
 
 

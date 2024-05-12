@@ -2,16 +2,19 @@
 
 //Metodo Adicionar Astronauta
 void ControleTrafego::AddAstronautaVoo(list<Astronauta>& astronautaAll, list<Voos>& voosAll){
-    Voos vooAux;
+    system("clear");
+    system("cls");
+    cout << endl;
     int inputVoo;
-    cout << "Digite o codigo do Voo em planejamento que deseja adicionar Astronautas: " << endl;
+    cout << "Digite o codigo do Voo em planejamento que deseja adicionar Astronautas: ";
     cin >> inputVoo;
     cin.ignore();
     string inputAstronauta;
-    cout << "Digite o Cpf do Astronauta disponivel: " << endl;
+    cout << "Digite o Cpf do Astronauta disponivel: ";
     getline(cin, inputAstronauta);
     bool vooEncontrado = false;
     bool astronautaEncontrado = false;
+    bool vooAdicionadoAst = false;
 
     for (auto& voos : voosAll){
         if ((inputVoo == voos.getCodigo()) && (voos.statusVoo == EmPlanejamento)){
@@ -20,13 +23,18 @@ void ControleTrafego::AddAstronautaVoo(list<Astronauta>& astronautaAll, list<Voo
             {
                 if ((inputAstronauta == astronauta.getCpf()) && (astronauta.statusAstronauta == disponivel))
                 {
-                    astronautaEncontrado = true;
-                    voos.AdicionarAstronauta(astronauta, voos.AstronautasPresentes);
-                    astronauta.statusAstronauta = indisponivel;
-                    astronauta.voosParticipados.push_back(voos.getCodigo());
-                    vooAux = voos;
+                    astronautaEncontrado = voos.AdicionarAstronauta(astronauta, voos.AstronautasPresentes);
+                    vooAdicionadoAst = astronauta.addvoosParticipados(voos.getCodigo(), astronauta.voosParticipados);
+                    system("clear");
                     system("cls");
-                    cout << "Astronauta " << astronauta.getNome() << " adicionado com sucesso ao voo: " << voos.getCodigo() << endl;
+                    if (astronautaEncontrado){
+                       cout << "Astronauta " << astronauta.getNome() << " adicionado com sucesso ao voo: " << voos.getCodigo() << endl;
+                       astronauta.statusAstronauta = indisponivel;
+                    }
+                    if (vooAdicionadoAst)
+                    {
+                        cout << "Voo: " << voos.getCodigo() << " adicionado com sucesso a lista de voos que o Astronauta: " << astronauta.getNome() << " participou!" << endl;
+                    }
                     break;
                 }
                 
@@ -36,6 +44,7 @@ void ControleTrafego::AddAstronautaVoo(list<Astronauta>& astronautaAll, list<Voo
 
     if (vooEncontrado == false)
     {
+        system("clear");
         system("cls");
         cout << "Voo em planejamento nao encontrado!" << endl;
     }
@@ -50,6 +59,7 @@ void ControleTrafego::AddAstronautaVoo(list<Astronauta>& astronautaAll, list<Voo
 }
 
 void ControleTrafego::RemoAstronautaVoo(list<Astronauta>& astronautaAll, list<Voos>& voosAll){
+    system("clear");
     system("cls");
     int inputVoo;
     cout << "Digite o codigo do Voo em planejamento que deseja remover Astronautas: ";
@@ -60,9 +70,7 @@ void ControleTrafego::RemoAstronautaVoo(list<Astronauta>& astronautaAll, list<Vo
     getline(cin, inputAstronauta);
     bool vooEncontrado = false;
     bool astronautaEncontrado = false;
-    cout << "Chegou aqui" << endl;
-    
-
+    bool vooRemovidoAst = false;
     
     for (auto& voos : voosAll){
         if ((inputVoo == voos.getCodigo()) && (voos.statusVoo == EmPlanejamento)){
@@ -71,50 +79,69 @@ void ControleTrafego::RemoAstronautaVoo(list<Astronauta>& astronautaAll, list<Vo
             {
                 if (astronautas.getCpf() == inputAstronauta)
                 {
-                    astronautaEncontrado = true;
-                    astronautas.removerVoosParticipados(voos.getCodigo(), astronautas.voosParticipados);
-                    astronautas.statusAstronauta = disponivel;
-                    cout << "Astronauta: " << astronautas.getNome() << " removido com sucesso do voo: " << voos.getCodigo() << endl;
+                    vooRemovidoAst = astronautas.removerVoosParticipados(voos.getCodigo(), astronautas.voosParticipados);
+                    astronautaEncontrado = voos.RemoverAstronauta(astronautas.getCpf(), voos.AstronautasPresentes);
+                    system("clear");
+                    system("cls");
+                    if (astronautaEncontrado){
+                        cout << "Astronauta: " << astronautas.getNome() << " removido com sucesso do voo: " << voos.getCodigo() << endl;
+                        astronautas.statusAstronauta = disponivel;
+                    }
+                    if (vooRemovidoAst)
+                    {
+                        cout << "Voo: " << voos.getCodigo() << " removido com sucesso a lista de voos que o Astronauta: " << astronautas.getNome() << " participou!" << endl;
+                    }
                 }
-                
-            }
-            
+            } 
         }
     }
 
-    cout << "Lista de voos: " << endl;
+    /*
+    //Impressão teste -----------------------------------------------------------------------------
+    cout << "Lista de Astronautas no voo: " << endl;
     for (Voos voos : voosAll)
     {
-        cout << "Voos: " << voos.getCodigo() << endl;
+        for (Astronauta astronautas : voos.AstronautasPresentes)
+        {
+            cout << "Astronauta: " << astronautas.getNome() << " no voo: " << voos.getCodigo();
+        }
+        
     }
 
+    cout << endl;
 
-    cout << "Lista de astronautas no voo: " << endl;
+    cout << "Lista de voos que o astronauta participou: " << endl;
     for (Astronauta astronautas : astronautaAll)
     {
-        cout << "Cpf do Astronauta: " << astronautas.getCpf() << endl;
         for (int voosCadastrados : astronautas.voosParticipados)
         {
             cout << "Voos que " << astronautas.getNome() << " participou: " << voosCadastrados << endl;
         }
         
     }
-    
+    cout << endl;
+    //Impressão teste -----------------------------------------------------------------------------
+    */
     
     if (vooEncontrado == false){
+        system("clear");
+        system("cls");
         cout << "Voo em planejamento nao encontrado!" << endl;
     }
     else{
         if (astronautaEncontrado == false){
+            system("clear");
+            system("cls");
             cout << "Astronauta dentro do voo nao encontrado!" << endl;
         }
     }
 }
 
 void ControleTrafego::PlanejamentoConcluido(list<Voos>& voosAll){
+    system("clear");
     system("cls");
     int input;
-    cout << "Insira o codigo do voo que está pronto para decolar: ";
+    cout << "Insira o codigo do voo que esta pronto para decolar: ";
     cin >> input;
     cin.ignore();
     bool vooEncontrado = false;
@@ -124,6 +151,7 @@ void ControleTrafego::PlanejamentoConcluido(list<Voos>& voosAll){
         if ((voos.getCodigo() == input) && (voos.statusVoo == EmPlanejamento)){
             vooEncontrado = true;
             voos.statusVoo = Planejado;
+            system("clear");
             system("cls");
             cout << "Voo: " << voos.getCodigo() << " pronto para decolar!" << endl;
         }
@@ -131,22 +159,25 @@ void ControleTrafego::PlanejamentoConcluido(list<Voos>& voosAll){
     }
 
     if (vooEncontrado == false){
+        system("clear");
         system("cls");
         cout << "Voo nao encontrado!" << endl;
     }
 }
 
 void ControleTrafego::ListaPlanejado(){
+    system("clear");
     system("cls");
     cout << "Lista de Voos Planejados:" << endl;
     int elemento = 1;
     for (Voos voos : voosAll){
         if (voos.statusVoo == Planejado){
-            cout << "Voo " << elemento << ": " << voos.getCodigo();
+            cout << "Voo " << elemento << ": " << voos.getCodigo() << endl;
             elemento ++;
         }
     }
     if (elemento == 1){
+        system("clear");
         system("cls");
         cout << "Nenhum Voo Planejado!" << endl;
     } 
@@ -158,11 +189,12 @@ void ControleTrafego::ListaEmCurso(){
     int elemento = 1;
     for (Voos voos : voosAll){
         if (voos.statusVoo == EmCurso){
-            cout << "Voo " << elemento << ": " << voos.getCodigo();
+            cout << "Voo " << elemento << ": " << voos.getCodigo() << endl;
             elemento ++;
         }
     }
     if (elemento == 1){
+        system("clear");
         system("cls");
         cout << "Nenhum Voo em Curso!" << endl;
     } 
@@ -170,32 +202,36 @@ void ControleTrafego::ListaEmCurso(){
 
 
 void ControleTrafego::ListaFimSucesso(){
+    system("clear");
     system("cls");
     cout << "Lista de Voos Finalizados Com Sucesso:" << endl;
     int elementoSucesso = 1;
     for (Voos voos : voosAll){
         if (voos.statusVoo == FimSucesso){
-            cout << "Voo " << elementoSucesso << ": " << voos.getCodigo();
+            cout << "Voo " << elementoSucesso << ": " << voos.getCodigo() << endl;
             elementoSucesso ++;
         }
     }
     if (elementoSucesso == 1){
+        system("clear");
         system("cls");
         cout << "Nenhum Voo Finalizado com Sucesso!" << endl;
     }
 }
 
 void ControleTrafego::ListaFimSemSucesso(){
+    system("clear");
     system("cls");
     cout << "Lista de Voos Finalizados Sem Sucesso:" << endl;
     int elementoSemSuc = 1;
     for (Voos voos : voosAll){
         if (voos.statusVoo == FimSemSucesso){
-            cout << "Voo " << elementoSemSuc << ": " << voos.getCodigo();
+            cout << "Voo " << elementoSemSuc << ": " << voos.getCodigo() << endl;
             elementoSemSuc ++;
         }
     }
     if (elementoSemSuc == 1){
+        system("clear");
         system("cls");
         cout << "Nenhum Voo Finalizado Sem Sucesso!" << endl;
     }

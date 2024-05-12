@@ -2,6 +2,7 @@
 
 //Metodos Lista Mortos
 void ControleTrafego::AstronautasMortosCpf(){
+    system("clear");
     system("cls");
     int elementos = 1;
 
@@ -20,12 +21,14 @@ void ControleTrafego::AstronautasMortosCpf(){
 
     if (elementos == 1)
     {
+        system("clear");
         system("cls");
         cout << "Nenhum astronauta morto #DeusNoControle" << endl;
     }
 }
 
 void ControleTrafego::AstronautasMortosNome(){
+    system("clear");
     system("cls");
     int elementos = 1;
 
@@ -44,12 +47,14 @@ void ControleTrafego::AstronautasMortosNome(){
 
     if (elementos == 1)
     {
+        system("clear");
         system("cls");
         cout << "Nenhum astronauta morto #DeusNoControle" << endl;
     }
 }
 
 void ControleTrafego::AstronautasMortosVoos(){
+    system("clear");
     system("cls");
     int elementos = 1;
     
@@ -57,14 +62,13 @@ void ControleTrafego::AstronautasMortosVoos(){
     {
         if (astronautas.statusAstronauta == morto)
         {
-            cout << "Astronauta morto - " << elementos << " #luto" << endl;
             //cout << "Nome: " << astronautas.getNome() << endl;
             //cout << "Cpf: " << astronautas.getCpf() << endl;
             if (astronautas.verificarListaVoos()){
-                cout << "Nao participou de nenhum Voo!" << endl;
+                cout << "O astronauta "<< astronautas.getNome() << " nao participou de nenhum voo!" << endl;
             }
             else{
-                cout << "Voos que participou -  " << elementos << endl;
+                cout << "O astronauta "<< astronautas.getNome() << " participou dos voo: " << endl;
                 astronautas.imprimirVoosPresentes();
                 elementos++;
             }
@@ -73,6 +77,7 @@ void ControleTrafego::AstronautasMortosVoos(){
 
     if (elementos == 1)
     {
+        system("clear");
         system("cls");
         cout << "Nenhum astronauta morto #DeusNoControle" << endl;
     }
@@ -81,6 +86,7 @@ void ControleTrafego::AstronautasMortosVoos(){
 
 //Metodos Lista Disponiveis
 void ControleTrafego::AstronautasDisponiveis(){
+    system("clear");
     system("cls");
     int elemento=1;
     for (Astronauta elementos : astronautaAll)
@@ -94,8 +100,9 @@ void ControleTrafego::AstronautasDisponiveis(){
 
     if (elemento==1)
     {
+        system("clear");
         system("cls");
-        cout << "Nenhum astronauta disponível #QueTristreza" << endl;
+        cout << "Nenhum astronauta disponivel #QueTristreza" << endl;
     }
     
     
@@ -104,6 +111,7 @@ void ControleTrafego::AstronautasDisponiveis(){
 
 //Metodos Lista Disponiveis
 void ControleTrafego::AstronautasIndisponiveis(){
+    system("clear");
     system("cls");
     int elemento=1;
     for (Astronauta elementos : astronautaAll)
@@ -117,6 +125,7 @@ void ControleTrafego::AstronautasIndisponiveis(){
 
     if (elemento==1)
     {
+        system("clear");
         system("cls");
         cout << "Todos astronautas estao disponiveis #QueAlegria" << endl;
     }
