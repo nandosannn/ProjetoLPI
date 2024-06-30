@@ -1,4 +1,4 @@
-#include "cabecalho/ControleTrafego.hpp"
+#include "ControleTrafego.hpp"
 
 //Metodos Lista Mortos
 void ControleTrafego::AstronautasMortosCpf(){

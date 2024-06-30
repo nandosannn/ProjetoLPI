@@ -1,4 +1,4 @@
-#include "cabecalho/ControleTrafego.hpp"
+#include "ControleTrafego.hpp"
 
 void ControleTrafego::LancarVoo(){
     system("clear");
