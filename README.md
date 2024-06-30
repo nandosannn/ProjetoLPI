@@ -91,5 +91,5 @@ Atenção :exclamation: :exclamation: :exclamation:
 ---
 
 ## Agradecimento
-Obrigado professor **Isaac Franco** pelos ensinamento nas aulas de Linguagem de Programação I e espero que o senhor possa me dar 10 por esse trabalho. :stuck_out_tongue_winking_eye:
+Obrigado professor **Isaac Franco** pelos ensinamentos nas aulas de Linguagem de Programação I e espero que o senhor possa me dar 10 por esse trabalho. :stuck_out_tongue_winking_eye:
 
