@@ -1,4 +1,4 @@
-#include "cabecalho/ControleTrafego.hpp"
+#include "ControleTrafego.hpp"
 
 //Construtores
 ControleTrafego::ControleTrafego(){

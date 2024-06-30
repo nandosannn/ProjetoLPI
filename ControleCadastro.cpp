@@ -1,4 +1,4 @@
-#include "cabecalho/ControleTrafego.hpp"
+#include "ControleTrafego.hpp"
 
 //Metodo Cadastro
 void ControleTrafego::cadastroAstronauta(){
