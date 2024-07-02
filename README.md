@@ -29,7 +29,7 @@ Já para Linux digite:
 
 > ``make``
 
-Após as operações serem relazado digite no terminal:
+Após a operação ser relazada, digite no terminal:
 
 > ``myprogram.exe`` 
 
