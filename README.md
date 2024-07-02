@@ -2,6 +2,7 @@
 
 ## Índices
 - [Introdução](#introdução)
+- [Compilação](#compilação)
 - [Funcionalidades](#funcionalidades)
 - [Uso](#uso)
 - [Agradecimento](#agradecimento)
@@ -16,6 +17,23 @@ O **Centro de Controle Espacial** é um software projetado para gerenciar o cont
 - Listar astronautas e voos de acordo com as opções disponíveis no sistema.
 
 O software oferece uma interface intuitiva e ferramentas para garantir uma gestão eficiente e segura do tráfego espacial. :fire:
+
+---
+## Compilação
+
+Para compilar o programa é necessário abrir o terminal do windows ou linux na mesma pasta que está os arquivos. Em seguido digite o seguinte comando para windows:
+
+> ``mingw32-make``
+
+Já para Linux digite:
+
+> ``make``
+
+Após as operações serem relazado digite no terminal:
+
+> ``myprogram.exe`` 
+
+Assim, o programa será executado.
 
 ---
 
