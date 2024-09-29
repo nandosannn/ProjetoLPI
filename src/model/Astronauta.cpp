@@ -1,4 +1,4 @@
-#include "Astronauta.hpp"
+#include "../../include/model/Astronauta.hpp"
 
 
 //Construtores

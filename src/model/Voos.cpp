@@ -1,4 +1,4 @@
-#include "Voos.hpp"
+#include "../../include/model/Voos.hpp"
 
 //Construtores
 Voos::Voos(){

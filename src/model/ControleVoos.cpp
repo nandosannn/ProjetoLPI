@@ -1,4 +1,4 @@
-#include "ControleTrafego.hpp"
+#include "../../include/model/ControleTrafego.hpp"
 
 //Metodo Adicionar Astronauta
 void ControleTrafego::AddAstronautaVoo(list<Astronauta>& astronautaAll, list<Voos>& voosAll){

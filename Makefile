@@ -1,16 +1,44 @@
-CC = g++
-CFLAGS = -std=c++11 -Wall
-SRCS = main.cpp Menu.cpp Astronauta.cpp Voos.cpp ControleTrafego.cpp ControleAstronauta.cpp ControleCadastro.cpp ControleVoos.cpp ControleGeral.cpp
-OBJS = $(SRCS:.cpp=.o)
-EXEC = myprogram
+# Nome do compilador
+CXX = g++
 
+# Flags de compilação
+CXXFLAGS = -std=c++17 -Wall -Iinclude
+
+# Diretórios
+SRC_DIR = src
+MODEL_SRC_DIR = $(SRC_DIR)/model
+
+# Arquivos fonte
+SOURCES = Main.cpp \
+          $(MODEL_SRC_DIR)/Astronauta.cpp \
+          $(MODEL_SRC_DIR)/ControleAstronauta.cpp \
+          $(MODEL_SRC_DIR)/ControleCadastro.cpp \
+          $(MODEL_SRC_DIR)/ControleGeral.cpp \
+          $(MODEL_SRC_DIR)/ControleTrafego.cpp \
+          $(MODEL_SRC_DIR)/ControleVoos.cpp \
+          $(MODEL_SRC_DIR)/Menu.cpp \
+          $(MODEL_SRC_DIR)/Voos.cpp
+
+# Arquivos objeto correspondentes (cada .cpp gera um .o)
+OBJECTS = $(SOURCES:.cpp=.o)
+
+# Nome do executável
+EXEC = programa
+
+# Regra padrão: compilar o projeto
 all: $(EXEC)
 
-$(EXEC):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+# Linkar os arquivos objeto para criar o executável
+$(EXEC): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(EXEC)
 
-%.o: %.cpp Menu.hpp Astronauta.hpp Voos.hpp ControleTrafego.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+# Regra para compilar os arquivos .cpp em .o
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Limpeza dos arquivos objeto e executável
 clean:
-	rm -f $(OBJS) $(EXEC)
+	rm -f $(OBJECTS) $(EXEC)
+
+# Phony targets
+.PHONY: all clean

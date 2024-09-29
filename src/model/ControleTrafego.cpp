@@ -1,4 +1,4 @@
-#include "ControleTrafego.hpp"
+#include "../../include/model/ControleTrafego.hpp"
 
 //Construtores
 ControleTrafego::ControleTrafego(){

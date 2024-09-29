@@ -1,17 +1,16 @@
 #include <iostream>
 #include <string>
 
-#include "Menu.hpp"
-#include "ControleTrafego.hpp"
-#include "Astronauta.hpp"
-#include "Voos.hpp"
+#include "include/model/Menu.hpp"
+#include "include/model/ControleTrafego.hpp"
+#include "include/model/Astronauta.hpp"
+#include "include/model/Voos.hpp"
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
     system("clear");
-    system("cls");
     cout << "Bem-vindo ao Centro de Controle Espacial!" << endl;
     cout << endl;
     cout << "Menu Principal" << endl;
@@ -32,10 +31,8 @@ int main(int argc, char const *argv[])
         try {
             opcaoPrincipal = stoi(inputPrincipal);
             system("clear");
-            system("cls");
         } catch(const exception& e) {
             system("clear");
-            system("cls");
             cout << "Entrada invalida. Por favor, digite um numero." << endl;
             continue;
         }
@@ -55,10 +52,8 @@ int main(int argc, char const *argv[])
                 try {
                     opcaoSecundaria = stoi(inputSecundario);
                     system("clear");
-                    system("cls");
                 } catch(const exception& e) {
                     system("clear");
-                    system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
                 }
@@ -96,12 +91,10 @@ int main(int argc, char const *argv[])
                     try{
                         opcaoSecundaria = stoi(inputSecundario);
                         system("clear");
-                        system("cls");
                     }
                     catch (const exception &e)
                     {
                         system("clear");
-                        system("cls");
                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                         continue;
                     }
@@ -120,12 +113,10 @@ int main(int argc, char const *argv[])
                             {
                                 opcaoTerciaria = stoi(inputTerciario);
                                 system("clear");
-                                system("cls");
                             }
                             catch (const exception &e)
                             {
                                 system("clear");
-                                system("cls");
                                 cout << "Entrada invalida. Por favor, digite um numero." << endl;
                                 continue;
                             }
@@ -185,12 +176,10 @@ int main(int argc, char const *argv[])
                     {
                         opcaoSecundaria = stoi(inputSecundario);
                         system("clear");
-                        system("cls");
                     }
                     catch (const exception &e)
                     {
                         system("clear");
-                        system("cls");
                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                         continue;
                     }
@@ -243,12 +232,10 @@ int main(int argc, char const *argv[])
                             {
                                 opcaoTerciaria = stoi(inputTerciario);
                                 system("clear");
-                                system("cls");
                             }
                             catch (const std::exception &e)
                             {
                                 system("clear");
-                                system("cls");
                                 cout << "Entrada invalida. Por favor, digite um numero." << endl;
                             }
 
@@ -271,12 +258,10 @@ int main(int argc, char const *argv[])
                                     {
                                         opcaoQuartenaria = stoi(inputQuartenario);
                                         system("clear");
-                                        system("cls");
                                     }
                                     catch (const std::exception &e)
                                     {
                                         system("clear");
-                                        system("cls");
                                         cout << "Entrada invalida. Por favor, digite um numero." << endl;
                                         continue;
                                     }
@@ -325,10 +310,8 @@ int main(int argc, char const *argv[])
                 try {
                     opcaoSecundaria = stoi(inputSecundario);
                     system("clear");
-                    system("cls");
                 } catch(const exception& e) {
                     system("clear");
-                    system("cls");
                     cout << "Entrada invalida. Por favor, digite um numero." << endl;
                     continue;
                 }

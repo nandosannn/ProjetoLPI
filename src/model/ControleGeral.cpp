@@ -1,4 +1,4 @@
-#include "ControleTrafego.hpp"
+#include "../../include/model/ControleTrafego.hpp"
 
 void ControleTrafego::LancarVoo(){
     system("clear");
