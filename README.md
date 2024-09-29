@@ -21,17 +21,13 @@ O software oferece uma interface intuitiva e ferramentas para garantir uma gest�
 ---
 ## Compilação
 
-Para compilar o programa é necessário abrir o terminal do windows ou linux na mesma pasta que está os arquivos. Em seguida digite o seguinte comando para windows:
-
-> ``mingw32-make``
-
-Já para Linux digite:
+Para compilar o programa é necessário abrir o terminal do windows ou linux na mesma pasta que está os arquivos. Em seguida digite o seguinte comando no Linux:
 
 > ``make``
 
 Após a operação ser relazada, digite no terminal:
 
-> ``myprogram.exe`` 
+> ``./programa`` 
 
 Assim, o programa será executado.
 
